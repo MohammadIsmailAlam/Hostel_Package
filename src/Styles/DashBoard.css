@@ -1,0 +1,5 @@
+.dashboard-btn {
+    display: flex;
+    gap: 1em;
+    align-items: flex-start;
+}
