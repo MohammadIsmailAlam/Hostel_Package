@@ -7,15 +7,14 @@ export default function Dashboard() {
     <div
       className="bg-img"
       style={{
-        height: "100vh",
-        width: "100vw",
         backgroundImage: `url(${backgroundImage})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        display: "flex",
-        justifyContent: "flex-end",
       }}
     >
+      <div className="text-overlay">
+        <h1 className="title-name">PrityLata Hostel</h1>
+        <p className="title-des">Book Your Package,</p>
+        <p className="title-des">According To Your Choice🌺</p>
+      </div>
       <div className="dashboard-btn">
         <Button
           variant="contained"

@@ -1,5 +1,38 @@
+.bg-img {
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: flex-end;
+  position: relative; /* make sure the .text-overlay is positioned relative to this */
+}
+
+.text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+
 .dashboard-btn {
-    display: flex;
-    gap: 1em;
-    align-items: flex-start;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+h1.title-name {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-style: italic;
+  text-decoration-line: underline;
+}
+
+p.title-des {
+  font-style: italic;
+  font-size: 1.5rem;
 }
