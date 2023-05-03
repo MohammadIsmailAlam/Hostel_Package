@@ -1,5 +1,6 @@
 @import './Styles/DashBoard.css';
 @import './Styles/Login.css';
+@import './Styles/SignUp.css';
 
 .App {
   text-align: center;

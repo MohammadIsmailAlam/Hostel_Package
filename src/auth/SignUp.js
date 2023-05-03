@@ -10,6 +10,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import { userContext } from "../App";
 import { Button } from "@mui/material";
+import signUpBackgroundImg from "../Assets/img/login.jpg";
 
 const Signup = () => {
   const auth = getAuth();
@@ -63,28 +64,46 @@ const Signup = () => {
   });
 
   return (
-    <div id="signup">
-      <div className="signup">
-        <h2>Create a account!</h2>
-        <input
-          onChange={(e) => setName(e.target.value)}
-          type="text"
-          placeholder="Enter your name"
-        />
-        <input
-          onChange={(e) => setEmail(e.target.value)}
-          type="email"
-          placeholder="Enter your email"
-        />
-        <input
-          onChange={(e) => setPassword(e.target.value)}
-          type="password"
-          placeholder="Enter your password"
-        />
-        <p>{err}</p>
-        <Button onClick={handleSubmit}>Sign Up</Button>
-        <div>
-          You have already account? <Link to="/">Login</Link>
+    <div
+      className="bg-img-signup"
+      style={{
+        backgroundImage: `url(${signUpBackgroundImg})`,
+      }}
+    >
+      <div id="signup">
+        <div className="signup">
+          <h2>Create a account!</h2>
+          <input
+            onChange={(e) => setName(e.target.value)}
+            type="text"
+            placeholder="Enter your name"
+          />
+          <input
+            onChange={(e) => setEmail(e.target.value)}
+            type="email"
+            placeholder="Enter your email"
+          />
+          <input
+            onChange={(e) => setPassword(e.target.value)}
+            type="password"
+            placeholder="Enter your password"
+          />
+          <p>{err}</p>
+          <div
+            className="footer"
+            style={{ display: "flex", justifyContent: "space-between" }}
+          >
+            <div>
+              <Link to="/login" style={{ marginRight: "10px" }}>
+                <strong>Already Have An Account?</strong>
+              </Link>
+            </div>
+            <div>
+              <Button onClick={handleSubmit} className="signup-btn">
+                Sign Up
+              </Button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

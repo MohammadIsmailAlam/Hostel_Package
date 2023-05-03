@@ -118,7 +118,7 @@ const Login = () => {
           >
             <div>
               <Link to="/signup" style={{ marginRight: "10px" }}>
-                Don't have an account?
+                <strong>Create An Account?</strong>
               </Link>
             </div>
             <div>
