@@ -10,6 +10,7 @@ import "./App.css";
 import Dashboard from "./Pages/Dashboard";
 import Login from "./auth/Login";
 import Signup from "./auth/SignUp";
+import Contacts from "./Pages/Contact";
 
 export const userContext = React.createContext(null);
 function App() {
@@ -22,6 +23,7 @@ function App() {
             <Route exact path="/" element={<Dashboard />} />
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/signup" element={<Signup />} />
+            <Route exact path="/contact" element={<Contacts />} />
             {/* <Route exact path="/room-details" element={<RoomDetails />} />
             <Route exact path="/contact" element={<Contact />} /> */}
           </Routes>
