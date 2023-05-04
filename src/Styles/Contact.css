@@ -20,6 +20,7 @@ body{
   border-radius: 6px;
   padding: 20px 60px 30px 40px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  margin: 100px;
 }
 .container .content{
   display: flex;
