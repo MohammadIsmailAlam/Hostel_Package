@@ -38,46 +38,25 @@ const Contacts = () => {
   };
 
   return (
-    <div className="container">
-      <div className="content">
-        <div className="left-side">
-          <div className="address details">
-            <i className="fa fa-map-marker-alt" />
-            <div className="topic">Address</div>
-            <div className="text-one">Dhanmondi 32</div>
-            <div className="text-two">Dhaka</div>
-          </div>
-
-          <div className="phone details">
-            <i className="fas fa-phone-alt"></i>
-            <div className="topic">Phone</div>
-            <div className="text-one">+0198 9893 5647</div>
-            <div className="text-two">+0196 3434 5678</div>
-          </div>
-          <div className="email details">
-            <i className="fas fa-envelope"></i>
-            <div className="topic">Email</div>
-            <div className="text-one">pritylata@gmail.com</div>
-            <div className="text-two">info.@gmail.com</div>
-          </div>
+    <Grid container spacing={6} className={classes.container}>
+      <Grid item xs={12} md={6}>
+        <div className={classes.details}>
+          <Room className={classes.icon} />
+          <Typography variant="subtitle1">Address</Typography>
+          <Typography variant="body1">Dhanmondi 32</Typography>
+          <Typography variant="body1">Dhaka</Typography>
         </div>
-
-        <div className="right-side">
-        <div class="topic-text">Send us a message</div>
-        <p>If you have any work from me or any types of quries related to my tutorial, you can send me message from here. It's my pleasure to help you.</p>
-        <form action="#">
-          <div className="input-box">
-            <input type="text" placeholder="Enter your name" />
-          </div>
-          <div className="input-box">
-            <input type="text" placeholder="Enter your email" />
-          </div>
-          <div className="input-box massage-box">
-            <input type="text" placeholder="Add a message" />
-          </div>
-
-          <div class="button">
-          <input type="button" value="Send Now"/>
+        <div className={classes.details}>
+          <Phone className={classes.icon} />
+          <Typography variant="subtitle1">Phone</Typography>
+          <Typography variant="body1">+0198 9893 5647</Typography>
+          <Typography variant="body1">+0196 3434 5678</Typography>
+        </div>
+        <div className={classes.details}>
+          <Email className={classes.icon} />
+          <Typography variant="subtitle1">Email</Typography>
+          <Typography variant="body1">pritylata@gmail.com</Typography>
+          <Typography variant="body1">info.@gmail.com</Typography>
         </div>
       </Grid>
       <Grid item xs={12} md={6}>
