@@ -11,7 +11,6 @@ import { useNavigate } from "react-router-dom";
 import { userContext } from "../App";
 import { Button } from "@mui/material";
 // import GoogleIcon from "../Assets/img/7123025_logo_google_g_icon (1).png";
-import loginBackgroundImg from "../Assets/img/login.jpg";
 
 const Login = () => {
   const auth = getAuth();
@@ -91,9 +90,6 @@ const Login = () => {
   return (
     <div
       className="bg-img-login"
-      style={{
-        backgroundImage: `url(${loginBackgroundImg})`,
-      }}
     >
       <div id="login">
         <div className="login">

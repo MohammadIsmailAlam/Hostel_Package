@@ -1,9 +1,9 @@
 import React from "react";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router";
-import SinglePageImg from "../Assets/img/single.jpg";
+// import SinglePageImg from "../Assets/img/single.jpg";
 
-const SingleRoom = () => {
+const RoomDetails = () => {
   const navigate = useNavigate();
 
   const handleGoBack = () => {
@@ -37,7 +37,7 @@ const SingleRoom = () => {
       </header>
       <div className="content row">
         <div className="image-single col-6">
-          <img src={SinglePageImg} alt="SinglePageImg" />
+          {/* <img src={SinglePageImg} alt="SinglePageImg" /> */}
         </div>
         <div className="main-text col-6">
           <h1>Single Room</h1>
@@ -71,4 +71,4 @@ const SingleRoom = () => {
   );
 };
 
-export default SingleRoom;
+export default RoomDetails;

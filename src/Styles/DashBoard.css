@@ -5,6 +5,7 @@
   background-position: center;
   display: flex;
   justify-content: flex-end;
+  background-image: url(../Assets/img/hl3.jpg);
   position: relative; /* make sure the .text-overlay is positioned relative to this */
 }
 

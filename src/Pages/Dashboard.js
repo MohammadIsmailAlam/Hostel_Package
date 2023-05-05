@@ -1,5 +1,4 @@
 import React from "react";
-import backgroundImage from "../Assets/img/hl3.jpg";
 import Logo from "../Assets/img/logo.png";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router";
@@ -9,7 +8,7 @@ export default function Dashboard() {
   const navigate = useNavigate();
 
   const handleRoomDetails = () => {
-    navigate("/roomDetails")
+    navigate("/room-details")
   }
 
   const handleSignUpClick = () => {
@@ -27,9 +26,6 @@ export default function Dashboard() {
   return (
     <div
       className="bg-img"
-      style={{
-        backgroundImage: `url(${backgroundImage})`
-      }}
     >
       <img className="logo" src={Logo} alt="PrityLata Hostel Logo" />
       <div className="text-overlay">

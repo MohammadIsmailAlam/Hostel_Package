@@ -81,17 +81,17 @@ nav ul li a:hover {
     box-shadow: 0 0 10px white;
 }
 
-.image-single{
-
+.image-single {
     object-fit: contain;
     width: 500px;
     height: 500px;
     border: 5px solid whitesmoke;
+    background: url(../Assets//img/single.jpg);
 }
 
 
-.image-double{
- 
+.image-double {
+
     object-fit: contain;
     width: 500px;
     height: 500px;
