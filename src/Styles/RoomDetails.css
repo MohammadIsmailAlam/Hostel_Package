@@ -3,13 +3,6 @@
     scroll-behavior: smooth;
 }
 
-body {
-    font-family: 'David Libre';
-    margin: 0px;
-    padding: 0px;
-    background-color: rgb(41, 39, 39);
-}
-
 .bg-clr {
     background-color: rgb(41, 39, 39);
 }
@@ -113,6 +106,7 @@ nav ul li a:hover {
     left: 50%;
     top: 55%;
     transform: translate(-50%, -50%);
+    background-color: rgb(41, 39, 39);
 }
 
 .main-text {
