@@ -1,13 +1,24 @@
 .bg-img {
+  position: relative;
   height: 100vh;
   width: 100vw;
-  background-size: cover;
-  background-position: center;
   display: flex;
   justify-content: flex-end;
   background-image: url(../Assets/img/hl3.jpg);
-  position: relative; /* make sure the .text-overlay is positioned relative to this */
+  background-size: cover;
+  background-position: center;
 }
+
+.bg-img::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
 
 .text-overlay {
   position: absolute;
@@ -15,7 +26,10 @@
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  color: white;
+  font-size: 40px;
+  font-style: oblique;
+  font-weight: bolder;
+  color: rgb(250, 231, 231);
 }
 
 .dashboard-btn {
@@ -26,11 +40,10 @@
   gap: 1rem;
 }
 
-h1.title-name {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  font-style: italic;
-  text-decoration-line: underline;
+p.title-name {
+  text-decoration: underline;
+  font-style: oblique;
+  margin-bottom: 1em;
 }
 
 p.title-des {

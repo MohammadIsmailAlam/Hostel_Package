@@ -4,12 +4,11 @@ import { Button } from "@mui/material";
 import { useNavigate } from "react-router";
 
 export default function Dashboard() {
-  
   const navigate = useNavigate();
 
   const handleRoomDetails = () => {
-    navigate("/room-details")
-  }
+    navigate("/room-details");
+  };
 
   const handleSignUpClick = () => {
     navigate("/SignUp");
@@ -24,14 +23,15 @@ export default function Dashboard() {
   };
 
   return (
-    <div
-      className="bg-img"
-    >
+    <div className="bg-img">
       <img className="logo" src={Logo} alt="PrityLata Hostel Logo" />
       <div className="text-overlay">
-        <h1 className="title-name">PrityLata Hostel</h1>
-        <p className="title-des">Book Your Package,</p>
-        <p className="title-des">According To Your Choice🌺</p>
+        <p className="title-name">PrityLata Hostel</p>
+        <p className="title-des">
+          Book Your Package,
+          <br />
+          According To Your Choice🌺
+        </p>
       </div>
       <div className="dashboard-btn">
         <Button

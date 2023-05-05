@@ -105,13 +105,13 @@ nav ul li a:hover {
 */
 
 .content {
-    width: 90%;
+    width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 55%;
     transform: translate(-50%, -50%);
 }
 
