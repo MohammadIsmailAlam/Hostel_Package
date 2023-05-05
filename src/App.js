@@ -11,7 +11,6 @@ import Dashboard from "./Pages/Dashboard";
 import Login from "./auth/Login";
 import Signup from "./auth/SignUp";
 import Contacts from "./Pages/Contact";
-import RoomDetails from './Pages/RoomDetails';
 
 export const userContext = React.createContext(null);
 function App() {
