@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import firebase from "./firebase";
 import {
@@ -57,11 +57,15 @@ const Signup = () => {
     }
   };
 
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
-      navigate("/");
-    }
-  });
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        navigate("/");
+      }
+    });
+
+    return () => unsubscribe();
+  }, [auth, navigate]);
 
   return (
     <div
@@ -73,21 +77,27 @@ const Signup = () => {
       <div id="signup">
         <div className="signup">
           <h2>Create a account!</h2>
-          <input
-            onChange={(e) => setName(e.target.value)}
-            type="text"
-            placeholder="Enter your name"
-          />
-          <input
-            onChange={(e) => setEmail(e.target.value)}
-            type="email"
-            placeholder="Enter your email"
-          />
-          <input
-            onChange={(e) => setPassword(e.target.value)}
-            type="password"
-            placeholder="Enter your password"
-          />
+          <form onClick={handleSubmit}>
+            <input
+              onChange={(e) => setName(e.target.value)}
+              type="text"
+              placeholder="Enter your username"
+              autoComplete="username"
+            />
+
+            <input
+              onChange={(e) => setEmail(e.target.value)}
+              type="email"
+              placeholder="Enter your email"
+            />
+            <input
+              onChange={(e) => setPassword(e.target.value)}
+              type="password"
+              placeholder="Enter your password"
+              autoComplete="current-password"
+            />
+          </form>
+
           <p>{err}</p>
           <div
             className="footer"
@@ -99,7 +109,7 @@ const Signup = () => {
               </Link>
             </div>
             <div>
-              <Button onClick={handleSubmit} className="signup-btn">
+              <Button type="submit" className="signup-btn">
                 Sign Up
               </Button>
             </div>

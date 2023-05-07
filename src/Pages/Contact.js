@@ -1,6 +1,6 @@
-import React from 'react';
-import { Mail, Phone } from '@material-ui/icons';
-import { LocationCity } from '@mui/icons-material';
+import React from "react";
+import { Mail, Phone } from "@material-ui/icons";
+import { LocationCity } from "@mui/icons-material";
 
 function Contact() {
   return (
@@ -28,7 +28,11 @@ function Contact() {
         </div>
         <div className="right-side">
           <div className="topic-text">Send us a message</div>
-          <p>If you have any work from me or any types of quries related to my tutorial, you can send me message from here. It's my pleasure to help you.</p>
+          <p>
+            If you have any work from me or any types of quries related to my
+            tutorial, you can send me message from here. It's my pleasure to help
+            you.
+          </p>
           <form action="#">
             <div className="input-box">
               <input type="text" placeholder="Enter your name" />
@@ -37,7 +41,7 @@ function Contact() {
               <input type="text" placeholder="Enter your email" />
             </div>
             <div className="input-box message-box">
-              <input type='text' placeholder='Write your comments'/>
+              <input type="text" placeholder="Write your comments" />
             </div>
             <div className="button">
               <input type="button" value="Send Now" />

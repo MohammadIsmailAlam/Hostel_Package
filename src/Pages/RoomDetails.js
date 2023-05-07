@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "@mui/material";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
+
 // import SinglePageImg from "../Assets/img/single.jpg";
 
 const RoomDetails = () => {

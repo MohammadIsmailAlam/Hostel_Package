@@ -12,6 +12,7 @@ import Login from "./auth/Login";
 import Signup from "./auth/SignUp";
 import Contacts from "./Pages/Contact";
 import RoomDetails from './Pages/RoomDetails';
+import Welcome from './Pages/Welcome';
 
 export const userContext = React.createContext(null);
 function App() {
@@ -27,6 +28,7 @@ function App() {
             <Route exact path="/contact" element={<Contacts />} />
             <Route exact path="/room-details" element={<RoomDetails />} />
             <Route exact path="/contact" element={<Contacts />} />
+            <Route exact path="/welcome" element={<Welcome />} />
           </Routes>
         </Router>
       </userContext.Provider>
