@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
   getAuth,
@@ -12,19 +12,12 @@ import { Button } from "@mui/material";
 const Login = () => {
   const auth = getAuth();
   const navigate = useNavigate();
-  const context = useContext(userContext);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [err, setErr] = useState("");
 
-  useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        navigate("/welcome");
-      }
-    });
-  }, [auth, navigate]);
+  const context = useContext(userContext);
 
   const validateEmail = (email) => {
     const re = /\S+@\S+\.\S+/;
@@ -47,7 +40,8 @@ const Login = () => {
         .then((userCredential) => {
           setErr("");
           context.setUserEmail(email);
-          localStorage.setItem("userEmail", email);
+          localStorage.setItem("userEmail", email); // save email in local storage
+          navigate("/welcome");
         })
         .catch((error) => {
           console.log(error.code);
@@ -62,47 +56,58 @@ const Login = () => {
     }
   };
 
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      navigate("/welcome");
+    }
+  });
+
   return (
     <div className="bg-img-login">
       <div id="login">
         <div className="login">
           <h2 className="login">Login your account!</h2>
-          <form onSubmit={handleSubmit}>
-            <strong>User Email</strong>
-            <input
-              onChange={(e) => setEmail(e.target.value)}
-              type="email"
-              placeholder="Enter your email"
-              autoComplete="username"
-            />
-            <strong>Password</strong>
-            <input
-              onChange={(e) => setPassword(e.target.value)}
-              type="password"
-              placeholder="Enter your password"
-              autoComplete="current-password"
-            />
-            <p>{err}</p>
-            <div className="footer">
-              <div>
-                <Link to="/signup" style={{ marginRight: "10px" }}>
-                  <strong>Create An Account?</strong>
-                </Link>
-              </div>
-              <div>
-                <Button
-                  variant="contained"
-                  onClick={handleGoBack}
-                  style={{ marginRight: "10px" }}
-                >
-                  Back
-                </Button>
-                <Button type="submit" className="login-btn">
-                  Login
-                </Button>
-              </div>
+          <strong>User Email</strong>
+          <input
+            onChange={(e) => setEmail(e.target.value)}
+            type="email"
+            placeholder="Enter your email"
+          />
+          <strong>Password</strong>
+          <input
+            onChange={(e) => setPassword(e.target.value)}
+            type="password"
+            placeholder="Enter your password"
+          />
+          <p>{err}</p>
+
+          <div
+            className="footer"
+            style={{ display: "flex", justifyContent: "space-between" }}
+          >
+            <div>
+              <Link to="/signup" style={{ marginRight: "10px" }}>
+                <strong>Create An Account?</strong>
+              </Link>
             </div>
-          </form>
+            <div>
+              <Button
+                variant="contained"
+                onClick={handleGoBack}
+                style={{ marginRight: "10px" }}
+              >
+                Back
+              </Button>
+              <Button onClick={handleSubmit} className="login-btn">
+                Login
+              </Button>
+            </div>
+          </div>
+
+          {/* <Button style={{ height: "40px" }} onClick={handleGoogleAuth}>
+            <img src={GoogleIcon} alt="Google" />
+            <span>Log in with Google</span>
+          </Button> */}
         </div>
       </div>
     </div>

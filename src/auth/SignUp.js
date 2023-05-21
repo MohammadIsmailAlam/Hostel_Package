@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import firebase from "./firebase";
 import {
@@ -43,7 +43,7 @@ const Signup = () => {
             // Profile updated!
             setErr("");
             context.setUserEmail(email);
-            navigate("/DashBoard");
+            navigate("/welcome");
           });
         })
         .catch((error) => {
@@ -57,15 +57,11 @@ const Signup = () => {
     }
   };
 
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        navigate("/");
-      }
-    });
-
-    return () => unsubscribe();
-  }, [auth, navigate]);
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      navigate("/welcome");
+    }
+  });
 
   return (
     <div
@@ -77,27 +73,21 @@ const Signup = () => {
       <div id="signup">
         <div className="signup">
           <h2>Create a account!</h2>
-          <form onClick={handleSubmit}>
-            <input
-              onChange={(e) => setName(e.target.value)}
-              type="text"
-              placeholder="Enter your username"
-              autoComplete="username"
-            />
-
-            <input
-              onChange={(e) => setEmail(e.target.value)}
-              type="email"
-              placeholder="Enter your email"
-            />
-            <input
-              onChange={(e) => setPassword(e.target.value)}
-              type="password"
-              placeholder="Enter your password"
-              autoComplete="current-password"
-            />
-          </form>
-
+          <input
+            onChange={(e) => setName(e.target.value)}
+            type="text"
+            placeholder="Enter your name"
+          />
+          <input
+            onChange={(e) => setEmail(e.target.value)}
+            type="email"
+            placeholder="Enter your email"
+          />
+          <input
+            onChange={(e) => setPassword(e.target.value)}
+            type="password"
+            placeholder="Enter your password"
+          />
           <p>{err}</p>
           <div
             className="footer"
@@ -109,7 +99,7 @@ const Signup = () => {
               </Link>
             </div>
             <div>
-              <Button type="submit" className="signup-btn">
+              <Button onClick={handleSubmit} className="signup-btn">
                 Sign Up
               </Button>
             </div>

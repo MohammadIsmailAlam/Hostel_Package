@@ -7,18 +7,20 @@ function Welcome() {
   const navigate = useNavigate();
 
   useEffect(() => {
+    setName(localStorage.getItem("name"));
+
     // Check if user is authenticated
-    if (!localStorage.getItem("name")) {
-      navigate("/");
-    } else {
-      setName(localStorage.getItem("name"));
-    }
+    // if (!localStorage.getItem("name")) {
+    //   navigate("/");
+    // } else {
+    //   setName(localStorage.getItem("name"));
+    // }
   }, [navigate]);
 
   const handleLogout = () => {
     // Clear local storage and redirect to login
     localStorage.clear();
-    navigate("/dashboard");
+    navigate("/");
   };
   const handleBook = () => {
     navigate("/booking");
@@ -27,13 +29,11 @@ function Welcome() {
     navigate("/packages");
   };
   const handleChangePassword = () => {
-    // Clear local storage and redirect to login
-    localStorage.clear();
     navigate("/change-password");
   };
 
   return (
-    <div>
+    <div className="welcome">
       <h1>
         Hello, {name}
         <br />
@@ -41,7 +41,7 @@ function Welcome() {
         Cordially Welcoming you to our Pritylata Hostel🌺
       </h1>
       <br />
-      <nav className="home-nav">
+      <nav style={{backgroundColor: 'white'}}>
         <Button onClick={handleLogout}>Logout</Button>
         <Button onClick={handleBook}>Bookings</Button>
         <Button onClick={handlePackages}>Packages</Button>
